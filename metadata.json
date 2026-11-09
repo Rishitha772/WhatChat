@@ -1,0 +1,6 @@
+{
+  "name": "WhatChat - Your Chats. Your Memories.",
+  "description": "A modern messaging app with real-time chats, groups, and My Space - personal event-based memory storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

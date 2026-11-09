@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: whatchat-backend
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:whatchat_db}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:rootpassword}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+# Security & JWT Configuration
+security:
+  jwt:
+    secret-key: ${JWT_SECRET:whatchat_super_secure_jwt_secret_key_light_lavender_2026}
+    expiration-time: 86400000 # 24 Hours
+    refresh-expiration-time: 604800000 # 7 Days
+
+# S3 Object Storage Configuration for Media (Photos, Videos, PDFs, Voice Notes)
+aws:
+  s3:
+    bucket: ${AWS_S3_BUCKET:whatchat-media-storage}
+    region: ${AWS_REGION:us-east-1}
+    access-key: ${AWS_ACCESS_KEY_ID:mock_s3_key}
+    secret-key: ${AWS_SECRET_ACCESS_KEY:mock_s3_secret}
+    presigned-url-expiration-minutes: 60
+
+server:
+  port: ${PORT:8080}

@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-lavender-primary: #E9DDFB;
+  --color-lavender-accent: #B99AEF;
+  --color-lavender-deep: #8064B5;
+  --color-lavender-soft: #F8F5FC;
+  --color-whatchat-text: #292333;
+  --color-whatchat-muted: #777181;
+  --color-whatchat-border: #EAE5F1;
+  --color-whatchat-success: #5EAA85;
+}
+
+/* Custom smooth scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #EAE5F1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D8CCE8;
+}
+
+/* Audio waveform animation */
+@keyframes wave-bar {
+  0%, 100% { height: 6px; }
+  50% { height: 22px; }
+}
+
+.animate-waveform {
+  animation: wave-bar 1.2s ease-in-out infinite;
+}
