@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- WhatChat Signature Purple Aesthetic Palette -->
+    <color name="purple_primary">#8064B5</color>
+    <color name="purple_dark">#6E53A2</color>
+    <color name="purple_light">#947BC3</color>
+    <color name="lavender_soft">#F1EBFA</color>
+    <color name="lavender_muted">#ECE2F9</color>
+    
+    <!-- Surface & Backgrounds -->
+    <color name="background_app">#F8F5FC</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="surface_dock">#FFFFFF</color>
+    <color name="border_subtle">#EAE5F1</color>
+    <color name="border_divider">#EDE7F6</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#111B21</color>
+    <color name="text_secondary">#777181</color>
+    <color name="text_muted">#8A8494</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_purple">#7050A6</color>
+
+    <!-- Chat Bubbles -->
+    <color name="bubble_sent">#8064B5</color>
+    <color name="bubble_received">#FFFFFF</color>
+    <color name="bubble_text_sent">#FFFFFF</color>
+    <color name="bubble_text_received">#111B21</color>
+    <color name="bubble_time_sent">#ECE2F9</color>
+    <color name="bubble_time_received">#777181</color>
+
+    <!-- Status & Alerts -->
+    <color name="online_green">#10B981</color>
+    <color name="error_rose">#E11D48</color>
+    <color name="error_bg">#FFF1F2</color>
+    <color name="success_green">#059669</color>
+</resources>
+

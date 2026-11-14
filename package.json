@@ -1,0 +1,13 @@
+{
+  "name": "whatchat-workspace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WhatChat full stack application workspace",
+  "scripts": {
+    "dev": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview",
+    "backend": "powershell -ExecutionPolicy Bypass -File start-backend.ps1",
+    "test:backend": "mvn test -f backend/pom.xml"
+  }
+}

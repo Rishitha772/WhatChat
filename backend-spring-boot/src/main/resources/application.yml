@@ -1,0 +1,76 @@
+spring:
+  application:
+    name: whatchat-backend
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:h2:mem:whatchat_db;DB_CLOSE_DELAY=-1;MODE=MySQL;DATABASE_TO_LOWER=TRUE}
+    username: ${DATASOURCE_USERNAME:sa}
+    password: ${DATASOURCE_PASSWORD:}
+    driver-class-name: ${DATASOURCE_DRIVER:org.h2.Driver}
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/whatchat_db}
+      database: ${MONGODB_DATABASE:whatchat_db}
+      auto-index-creation: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  sql:
+    init:
+      mode: never
+  mail:
+    host: ${SMTP_HOST:}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:}
+    password: ${SMTP_PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: ${SMTP_AUTH:false}
+          starttls:
+            enable: ${SMTP_STARTTLS:false}
+
+# Security & JWT Configuration
+security:
+  jwt:
+    secret-key: ${JWT_SECRET:whatchat-super-secure-jwt-signing-secret-key-2026-minimum-32-bytes}
+  cookie:
+    secure: ${COOKIE_SECURE:false}
+
+app:
+  url: ${APP_URL:http://localhost:3000}
+  cors:
+    origin: ${APP_ORIGIN:http://localhost:3000}
+  mail:
+    from: ${MAIL_FROM:noreply@whatchat.app}
+
+# S3 Object Storage Configuration for Media (Photos, Videos, PDFs, Voice Notes)
+aws:
+  s3:
+    bucket: ${AWS_S3_BUCKET:}
+    region: ${AWS_REGION:us-east-1}
+    access-key: ${AWS_ACCESS_KEY_ID:}
+    secret-key: ${AWS_SECRET_ACCESS_KEY:}
+    presigned-url-expiration-minutes: 60
+
+server:
+  port: ${PORT:8080}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: mysql
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:whatchat_db}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${MYSQL_USER:whatchat_app}
+    password: ${MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">WhatChat</string>
+    <string name="tagline">A space for conversations and moments you want to keep.</string>
+    
+    <!-- Navigation Tabs -->
+    <string name="nav_chats">Chats</string>
+    <string name="nav_contacts">Contacts</string>
+    <string name="nav_myspace">My Space</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Auth -->
+    <string name="welcome_back">Welcome back</string>
+    <string name="login_subtitle">Sign in to pick up where you left off.</string>
+    <string name="create_account">Create your WhatChat account</string>
+    <string name="email_hint">Email address</string>
+    <string name="password_hint">Password</string>
+    <string name="full_name_hint">Full name</string>
+    <string name="phone_number_hint">Phone number (e.g. +91 98765 43210)</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Create Account</string>
+    <string name="dont_have_account">New to WhatChat? Create an account</string>
+    <string name="already_have_account">Already have an account? Sign in</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="resend_verification">Resend verification email</string>
+    <string name="verify_email_title">Verify your email address</string>
+
+    <!-- Contacts & Permissions -->
+    <string name="sync_contacts">Sync Phone Contacts</string>
+    <string name="contacts_permission_title">Why WhatChat needs contact access</string>
+    <string name="contacts_permission_desc">We use your contacts to help you find friends who are already on WhatChat using secure E.164 phone matching. We never send SMS messages automatically.</string>
+    <string name="allow_and_sync">Allow &amp; Sync Contacts</string>
+    <string name="invite_friends">Invite Friends</string>
+    <string name="share_invite_link">Share WhatChat Invite Link</string>
+    <string name="share_invite_text">Join me on WhatChat! Real-time messaging and personal memory capsules: http://localhost:5173</string>
+
+    <!-- Chat & Messaging -->
+    <string name="type_a_message">Type a message…</string>
+    <string name="search_chats">Search chats…</string>
+    <string name="search_contacts">Search contacts…</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="typing">typing…</string>
+    <string name="new_group">New Group</string>
+    <string name="group_name">Group Name</string>
+
+    <!-- My Space -->
+    <string name="myspace_title">My Space</string>
+    <string name="myspace_subtitle">Your private memory capsules, diary entries and special moments.</string>
+    <string name="new_capsule">New Memory Capsule</string>
+    <string name="capsule_title_hint">Capsule Title (e.g. Summer Trip 2026)</string>
+    <string name="capsule_desc_hint">Description or reflections…</string>
+    <string name="add_memory">Add Memory</string>
+</resources>

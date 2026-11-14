@@ -1,0 +1,17 @@
+[ {
+  "id" : "cnt_c92780ca9762",
+  "userId" : "user1",
+  "contactUserId" : null,
+  "phoneNumber" : "+1987654321",
+  "displayName" : "Alice Smith",
+  "username" : null,
+  "avatarUrl" : null,
+  "about" : "Hello WhatChat",
+  "lastSeen" : null,
+  "createdAt" : 1794651093.063788600,
+  "updatedAt" : 1794651093.063788600,
+  "registered" : false,
+  "online" : false,
+  "ownerUserId" : "user1",
+  "favorite" : false
+} ]

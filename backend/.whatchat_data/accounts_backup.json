@@ -1,0 +1,22 @@
+[ {
+  "id" : "account-id",
+  "fullName" : "Test Person",
+  "email" : "person@example.test",
+  "passwordHash" : "$2a$04$6mJmJJ91tBDS3VLWQ3wWWeQwk2j807nejUooV4tSagCx9.z4sDZ1C",
+  "emailVerified" : true,
+  "active" : true,
+  "profileComplete" : false,
+  "sessionVersion" : 0,
+  "username" : null,
+  "about" : "Hey there! I am using WhatChat.",
+  "avatarUrl" : null,
+  "phoneNumber" : null,
+  "lastSeen" : "Online",
+  "verificationTokenHash" : null,
+  "verificationExpiresAt" : null,
+  "resetTokenHash" : null,
+  "resetExpiresAt" : null,
+  "createdAt" : 1794651092.612990000,
+  "updatedAt" : 1794651092.614987900,
+  "online" : true
+} ]

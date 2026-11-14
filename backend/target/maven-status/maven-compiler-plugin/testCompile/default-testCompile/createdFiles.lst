@@ -1,0 +1,6 @@
+app\whatchat\auth\AuthServiceTest.class
+app\whatchat\mongo\service\ChatServiceTest.class
+app\whatchat\mongo\service\ContactServiceTest.class
+app\whatchat\auth\AuthServiceTest$SimpleObjectProvider.class
+app\whatchat\mongo\service\MySpaceServiceTest.class
+app\whatchat\mongo\service\NotificationServiceTest.class
