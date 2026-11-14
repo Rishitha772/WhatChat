@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ﻿import React, { useState } from 'react';
+=======
+import React, { useState } from 'react';
+>>>>>>> origin/main
 import {
   Sparkles,
   Plus,
@@ -15,6 +19,10 @@ import {
   FolderGit2,
   BookmarkCheck,
   Grid3X3,
+<<<<<<< HEAD
+=======
+  ListOrdered,
+>>>>>>> origin/main
   Clock,
   ArrowRight,
   MoreVertical,
@@ -23,10 +31,18 @@ import {
 } from 'lucide-react';
 import { useWhatChat } from '../../context/WhatChatContext';
 import { MySpaceEvent } from '../../types/whatchat';
+<<<<<<< HEAD
+=======
+import { EventChatView } from './EventChatView';
+>>>>>>> origin/main
 
 export const MySpaceView: React.FC = () => {
   const {
     events,
+<<<<<<< HEAD
+=======
+    activeEventId,
+>>>>>>> origin/main
     setActiveEventId,
     categories,
     selectedCategoryFilter,
@@ -35,12 +51,24 @@ export const MySpaceView: React.FC = () => {
     setMySpaceSearchQuery,
     mySpaceViewMode,
     setMySpaceViewMode,
+<<<<<<< HEAD
+=======
+    setIsCreateEventOpen,
+>>>>>>> origin/main
     deleteEvent,
     eventMessages,
   } = useWhatChat();
 
   const [activeMenuEventId, setActiveMenuEventId] = useState<string | null>(null);
 
+<<<<<<< HEAD
+=======
+  // If an active event is selected, render the Event Conversation View!
+  if (activeEventId) {
+    return <EventChatView />;
+  }
+
+>>>>>>> origin/main
   // Filter events
   const filteredEvents = events.filter((evt) => {
     // Search query
@@ -111,13 +139,20 @@ export const MySpaceView: React.FC = () => {
   };
 
   return (
+<<<<<<< HEAD
     <div className="flex-1 flex flex-col h-full bg-[#f8f5fc] overflow-y-auto select-none">
       {/* 1. Header Banner */}
       <div className="bg-white border-b border-[#eae5f1] p-6 lg:p-7 shrink-0">
+=======
+    <div className="flex-1 flex flex-col h-full bg-[#F8F5FC] overflow-y-auto select-none">
+      {/* 1. Header Banner */}
+      <div className="bg-white border-b border-[#EAE5F1] p-6 lg:p-8 shrink-0">
+>>>>>>> origin/main
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
               <div className="flex items-center gap-2 mb-1">
+<<<<<<< HEAD
                 <span className="p-2 rounded-xl bg-[#e9ddfb] text-[#8064b5]">
                   <Sparkles className="w-5 h-5 text-[#b99aef]" />
                 </span>
@@ -128,21 +163,42 @@ export const MySpaceView: React.FC = () => {
               </div>
               <p className="text-xs text-[#667781] max-w-xl">
                 Your private digital sanctuary. Create custom event capsules, preserve chat moments, organize life milestones, and journal reflections.
+=======
+                <span className="p-1.5 rounded-lg bg-[#E9DDFB] text-[#8064B5]">
+                  <Sparkles className="w-5 h-5" />
+                </span>
+                <h1 className="text-2xl font-bold tracking-tight text-[#292333]">My Space</h1>
+                <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#E9DDFB] text-[#8064B5]">
+                  Personal Memory Vault
+                </span>
+              </div>
+              <p className="text-xs text-[#777181] max-w-xl">
+                Your private digital sanctuary. Create custom events, organize personal memories, save chat moments, and self-reflect in dedicated event conversations.
+>>>>>>> origin/main
               </p>
             </div>
 
             {/* Action Button: Create Event */}
             <button
+<<<<<<< HEAD
               disabled
               title="Memory creation is not available until the My Space API is connected"
               className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#8064b5] hover:bg-[#947bc3] text-white text-xs font-bold transition-all shadow-sm active:scale-95 shrink-0"
             >
               <Plus className="w-4 h-4 stroke-[2.5]" />
               <span>Create Event Capsule</span>
+=======
+              onClick={() => setIsCreateEventOpen(true)}
+              className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#E9DDFB] hover:bg-[#D9C7F7] text-[#8064B5] text-xs font-bold transition-all shadow-xs hover:scale-105 active:scale-95 shrink-0"
+            >
+              <Plus className="w-4 h-4 stroke-[2.5]" />
+              <span>+ Create Event</span>
+>>>>>>> origin/main
             </button>
           </div>
 
           {/* Quick Metrics Cards */}
+<<<<<<< HEAD
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-5">
             <div className="bg-[#f8f5fc] border border-[#eae5f1] rounded-lg p-3 flex flex-col justify-between">
               <span className="text-[11px] font-medium text-[#667781]">Event Capsules</span>
@@ -167,6 +223,32 @@ export const MySpaceView: React.FC = () => {
             <div className="bg-[#f8f5fc] border border-[#eae5f1] rounded-lg p-3 flex flex-col justify-between">
               <span className="text-[11px] font-medium text-[#667781]">Voice Memos</span>
               <p className="text-lg font-bold text-[#111b21] tabular-nums mt-0.5">{totalAudio}</p>
+=======
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-6">
+            <div className="bg-[#F8F5FC] border border-[#EAE5F1] rounded-xl p-3 flex flex-col justify-between">
+              <span className="text-[11px] font-medium text-[#777181]">Personal Events</span>
+              <p className="text-lg font-bold text-[#292333] tabular-nums mt-1">{totalEvents}</p>
+            </div>
+
+            <div className="bg-[#F8F5FC] border border-[#EAE5F1] rounded-xl p-3 flex flex-col justify-between">
+              <span className="text-[11px] font-medium text-[#777181]">Memories Saved</span>
+              <p className="text-lg font-bold text-[#8064B5] tabular-nums mt-1">{totalMemories}</p>
+            </div>
+
+            <div className="bg-[#F8F5FC] border border-[#EAE5F1] rounded-xl p-3 flex flex-col justify-between">
+              <span className="text-[11px] font-medium text-[#777181]">Photos & Videos</span>
+              <p className="text-lg font-bold text-[#292333] tabular-nums mt-1">{totalPhotos}</p>
+            </div>
+
+            <div className="bg-[#F8F5FC] border border-[#EAE5F1] rounded-xl p-3 flex flex-col justify-between">
+              <span className="text-[11px] font-medium text-[#777181]">Documents & Transcripts</span>
+              <p className="text-lg font-bold text-[#292333] tabular-nums mt-1">{totalDocs}</p>
+            </div>
+
+            <div className="bg-[#F8F5FC] border border-[#EAE5F1] rounded-xl p-3 flex flex-col justify-between">
+              <span className="text-[11px] font-medium text-[#777181]">Voice Memos</span>
+              <p className="text-lg font-bold text-[#292333] tabular-nums mt-1">{totalAudio}</p>
+>>>>>>> origin/main
             </div>
           </div>
         </div>
@@ -177,6 +259,7 @@ export const MySpaceView: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
           {/* Search bar */}
           <div className="relative flex-1 max-w-md">
+<<<<<<< HEAD
             <Search className="w-4 h-4 text-[#667781] absolute left-3 top-2.5 pointer-events-none" />
             <input
               type="text"
@@ -184,10 +267,20 @@ export const MySpaceView: React.FC = () => {
               value={mySpaceSearchQuery}
               onChange={(e) => setMySpaceSearchQuery(e.target.value)}
               className="w-full bg-white border border-[#eae5f1] rounded-lg pl-9 pr-3 py-2 text-xs text-[#111b21] placeholder-[#667781] focus:outline-hidden focus:border-[#947bc3]"
+=======
+            <Search className="w-4 h-4 text-[#777181] absolute left-3 top-2.5 pointer-events-none" />
+            <input
+              type="text"
+              placeholder="Search events, diary reflections, or tags..."
+              value={mySpaceSearchQuery}
+              onChange={(e) => setMySpaceSearchQuery(e.target.value)}
+              className="w-full bg-white border border-[#EAE5F1] rounded-xl pl-9 pr-3 py-2 text-xs text-[#292333] placeholder-[#777181] focus:outline-hidden focus:border-[#B99AEF]"
+>>>>>>> origin/main
             />
           </div>
 
           {/* View mode buttons: Events | Timeline | Gallery */}
+<<<<<<< HEAD
           <div className="flex items-center gap-1 bg-white p-1 rounded-lg border border-[#eae5f1] shadow-2xs self-start">
             <button
               onClick={() => setMySpaceViewMode('events')}
@@ -199,10 +292,24 @@ export const MySpaceView: React.FC = () => {
             >
               <Grid3X3 className="w-3.5 h-3.5" />
               <span>Capsules</span>
+=======
+          <div className="flex items-center gap-1 bg-white p-1 rounded-xl border border-[#EAE5F1] shadow-2xs self-start">
+            <button
+              onClick={() => setMySpaceViewMode('events')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                mySpaceViewMode === 'events'
+                  ? 'bg-[#E9DDFB] text-[#8064B5]'
+                  : 'text-[#777181] hover:text-[#292333]'
+              }`}
+            >
+              <Grid3X3 className="w-3.5 h-3.5" />
+              <span>Events</span>
+>>>>>>> origin/main
             </button>
 
             <button
               onClick={() => setMySpaceViewMode('timeline')}
+<<<<<<< HEAD
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
                 mySpaceViewMode === 'timeline'
                   ? 'bg-[#e9ddfb] text-[#8064b5]'
@@ -211,10 +318,21 @@ export const MySpaceView: React.FC = () => {
             >
               <Clock className="w-3.5 h-3.5" />
               <span>Timeline</span>
+=======
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                mySpaceViewMode === 'timeline'
+                  ? 'bg-[#E9DDFB] text-[#8064B5]'
+                  : 'text-[#777181] hover:text-[#292333]'
+              }`}
+            >
+              <Clock className="w-3.5 h-3.5" />
+              <span>Memory Timeline</span>
+>>>>>>> origin/main
             </button>
 
             <button
               onClick={() => setMySpaceViewMode('gallery')}
+<<<<<<< HEAD
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-semibold transition-colors ${
                 mySpaceViewMode === 'gallery'
                   ? 'bg-[#e9ddfb] text-[#8064b5]'
@@ -223,11 +341,22 @@ export const MySpaceView: React.FC = () => {
             >
               <ImageIcon className="w-3.5 h-3.5" />
               <span>Media Vault</span>
+=======
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
+                mySpaceViewMode === 'gallery'
+                  ? 'bg-[#E9DDFB] text-[#8064B5]'
+                  : 'text-[#777181] hover:text-[#292333]'
+              }`}
+            >
+              <ImageIcon className="w-3.5 h-3.5" />
+              <span>Personal Gallery</span>
+>>>>>>> origin/main
             </button>
           </div>
         </div>
 
         {/* Categories Bar */}
+<<<<<<< HEAD
         <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-1">
           <button
             onClick={() => setSelectedCategoryFilter(null)}
@@ -235,6 +364,15 @@ export const MySpaceView: React.FC = () => {
               selectedCategoryFilter === null
                 ? 'bg-[#8064b5] text-white shadow-xs'
                 : 'bg-white border border-[#eae5f1] text-[#667781] hover:text-[#111b21]'
+=======
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+          <button
+            onClick={() => setSelectedCategoryFilter(null)}
+            className={`px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+              selectedCategoryFilter === null
+                ? 'bg-[#8064B5] text-white shadow-xs'
+                : 'bg-white border border-[#EAE5F1] text-[#777181] hover:text-[#292333]'
+>>>>>>> origin/main
             }`}
           >
             All Categories
@@ -244,10 +382,17 @@ export const MySpaceView: React.FC = () => {
             <button
               key={cat.id}
               onClick={() => setSelectedCategoryFilter(cat.name)}
+<<<<<<< HEAD
               className={`flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full whitespace-nowrap transition-colors ${
                 selectedCategoryFilter?.toLowerCase() === cat.name.toLowerCase()
                   ? 'bg-[#8064b5] text-white shadow-xs'
                   : 'bg-white border border-[#eae5f1] text-[#667781] hover:text-[#111b21]'
+=======
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition-colors ${
+                selectedCategoryFilter?.toLowerCase() === cat.name.toLowerCase()
+                  ? 'bg-[#8064B5] text-white shadow-xs'
+                  : 'bg-white border border-[#EAE5F1] text-[#777181] hover:text-[#292333]'
+>>>>>>> origin/main
               }`}
             >
               {getCategoryIcon(cat.iconName)}
@@ -257,6 +402,7 @@ export const MySpaceView: React.FC = () => {
         </div>
 
         {/* 3. Main Content Views */}
+<<<<<<< HEAD
         {events.length === 0 && (
           <section className="mx-auto flex max-w-md flex-col items-center py-14 text-center">
             <span className="mb-4 grid h-14 w-14 place-items-center rounded-2xl bg-[#e9ddfb] text-[#8064b5]">
@@ -275,6 +421,8 @@ export const MySpaceView: React.FC = () => {
             <p className="mt-3 text-xs text-[#9994a1]">Memory storage is not connected yet. No data will be saved until the backend is ready.</p>
           </section>
         )}
+=======
+>>>>>>> origin/main
 
         {/* A. EVENTS CARDS VIEW */}
         {mySpaceViewMode === 'events' && (
@@ -283,10 +431,17 @@ export const MySpaceView: React.FC = () => {
               <div
                 key={event.id}
                 onClick={() => setActiveEventId(event.id)}
+<<<<<<< HEAD
                 className="group relative bg-white border border-[#eae5f1] hover:border-[#947bc3] rounded-xl overflow-hidden shadow-2xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between"
               >
                 {/* Event Cover Image */}
                 <div className="relative h-44 w-full bg-[#f8f5fc] overflow-hidden">
+=======
+                className="group relative bg-white border border-[#EAE5F1] hover:border-[#B99AEF] rounded-2xl overflow-hidden shadow-2xs hover:shadow-md transition-all cursor-pointer flex flex-col justify-between"
+              >
+                {/* Event Cover Image */}
+                <div className="relative h-44 w-full bg-[#F8F5FC] overflow-hidden">
+>>>>>>> origin/main
                   <img
                     src={event.coverImageUrl}
                     alt={event.name}
@@ -297,7 +452,11 @@ export const MySpaceView: React.FC = () => {
 
                   {/* Top Badges */}
                   <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+<<<<<<< HEAD
                     <span className="px-2.5 py-0.5 rounded-full bg-white/95 backdrop-blur-xs text-[11px] font-bold text-[#8064b5] shadow-xs">
+=======
+                    <span className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[11px] font-bold text-[#8064B5] shadow-xs">
+>>>>>>> origin/main
                       {event.category}
                     </span>
 
@@ -308,7 +467,11 @@ export const MySpaceView: React.FC = () => {
                         </span>
                       )}
                       {event.isLocked && (
+<<<<<<< HEAD
                         <span className="p-1 rounded-full bg-black/60 text-white shadow-xs">
+=======
+                        <span className="p-1 rounded-full bg-black/50 text-white shadow-xs">
+>>>>>>> origin/main
                           <Lock className="w-3 h-3" />
                         </span>
                       )}
@@ -331,6 +494,7 @@ export const MySpaceView: React.FC = () => {
 
                 {/* Event Card Body */}
                 <div className="p-4 flex-1 flex flex-col justify-between">
+<<<<<<< HEAD
                   <p className="text-xs text-[#667781] line-clamp-2 leading-relaxed">
                     {event.description || 'Private event memories and attached documents.'}
                   </p>
@@ -348,12 +512,35 @@ export const MySpaceView: React.FC = () => {
                       </span>
                       <span className="flex items-center gap-1" title="Voice Memos">
                         <Mic className="w-3.5 h-3.5 text-[#8064b5]" />
+=======
+                  <p className="text-xs text-[#777181] line-clamp-2 leading-relaxed">
+                    {event.description || 'Private event memories and attached documents.'}
+                  </p>
+
+                  <div className="pt-4 mt-3 border-t border-[#F8F5FC] flex items-center justify-between">
+                    {/* Media counts icons */}
+                    <div className="flex items-center gap-2.5 text-[11px] text-[#777181]">
+                      <span className="flex items-center gap-1" title="Photos">
+                        <ImageIcon className="w-3.5 h-3.5 text-[#8064B5]" />
+                        <span>{event.mediaCounts.photos}</span>
+                      </span>
+                      <span className="flex items-center gap-1" title="Documents">
+                        <FileText className="w-3.5 h-3.5 text-[#8064B5]" />
+                        <span>{event.mediaCounts.documents}</span>
+                      </span>
+                      <span className="flex items-center gap-1" title="Voice Memos">
+                        <Mic className="w-3.5 h-3.5 text-[#8064B5]" />
+>>>>>>> origin/main
                         <span>{event.mediaCounts.audio}</span>
                       </span>
                     </div>
 
                     {/* Open Event Action */}
+<<<<<<< HEAD
                     <div className="flex items-center gap-1 text-xs font-semibold text-[#8064b5] group-hover:text-[#947bc3]">
+=======
+                    <div className="flex items-center gap-1 text-xs font-semibold text-[#8064B5] group-hover:text-[#6c519d]">
+>>>>>>> origin/main
                       <span>Open Space</span>
                       <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                     </div>
@@ -367,6 +554,7 @@ export const MySpaceView: React.FC = () => {
         {/* B. MEMORY TIMELINE VIEW */}
         {mySpaceViewMode === 'timeline' && (
           <div className="max-w-3xl mx-auto py-4 space-y-6">
+<<<<<<< HEAD
             <div className="relative pl-6 border-l-2 border-[#947bc3]/40 space-y-8">
               {filteredEvents.map((evt) => (
                 <div key={evt.id} className="relative group">
@@ -386,14 +574,42 @@ export const MySpaceView: React.FC = () => {
                       </div>
                       <span className="text-[11px] text-[#667781] font-medium flex items-center gap-1">
                         <Calendar className="w-3 h-3 text-[#8064b5]" />
+=======
+            <div className="relative pl-6 border-l-2 border-[#E9DDFB] space-y-8">
+              {filteredEvents.map((evt) => (
+                <div key={evt.id} className="relative group">
+                  {/* Timeline dot */}
+                  <span className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white border-4 border-[#8064B5] shadow-xs"></span>
+
+                  <div
+                    onClick={() => setActiveEventId(evt.id)}
+                    className="bg-white border border-[#EAE5F1] hover:border-[#B99AEF] p-4 rounded-2xl shadow-2xs cursor-pointer transition-all hover:shadow-sm"
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-[#E9DDFB] text-[#8064B5]">
+                          {evt.category}
+                        </span>
+                        <h4 className="text-sm font-bold text-[#292333]">{evt.name}</h4>
+                      </div>
+                      <span className="text-[11px] text-[#777181] font-medium flex items-center gap-1">
+                        <Calendar className="w-3 h-3 text-[#8064B5]" />
+>>>>>>> origin/main
                         <span>{evt.eventDate || 'Ongoing'}</span>
                       </span>
                     </div>
 
+<<<<<<< HEAD
                     <p className="text-xs text-[#667781] mb-3">{evt.description}</p>
 
                     {evt.coverImageUrl && (
                       <div className="h-44 w-full rounded-lg overflow-hidden mb-3">
+=======
+                    <p className="text-xs text-[#777181] mb-3">{evt.description}</p>
+
+                    {evt.coverImageUrl && (
+                      <div className="h-40 w-full rounded-xl overflow-hidden mb-3">
+>>>>>>> origin/main
                         <img
                           src={evt.coverImageUrl}
                           alt={evt.name}
@@ -402,10 +618,17 @@ export const MySpaceView: React.FC = () => {
                       </div>
                     )}
 
+<<<<<<< HEAD
                     <div className="flex items-center justify-between text-xs text-[#8064b5] font-semibold pt-2 border-t border-[#f8f5fc]">
                       <span>{evt.memoryCount} memory entries recorded</span>
                       <span className="flex items-center gap-1">
                         View capsule <ArrowRight className="w-3 h-3" />
+=======
+                    <div className="flex items-center justify-between text-xs text-[#8064B5] font-semibold pt-2 border-t border-[#F8F5FC]">
+                      <span>{evt.memoryCount} memory entries recorded</span>
+                      <span className="flex items-center gap-1">
+                        View conversation <ArrowRight className="w-3 h-3" />
+>>>>>>> origin/main
                       </span>
                     </div>
                   </div>
@@ -419,8 +642,13 @@ export const MySpaceView: React.FC = () => {
         {mySpaceViewMode === 'gallery' && (
           <div className="space-y-4">
             <div className="flex items-center justify-between">
+<<<<<<< HEAD
               <h3 className="text-sm font-bold text-[#111b21]">All Saved Media & Documents</h3>
               <span className="text-xs text-[#667781]">{allGalleryItems.length} items preserved</span>
+=======
+              <h3 className="text-sm font-bold text-[#292333]">All Saved Media & Documents</h3>
+              <span className="text-xs text-[#777181]">{allGalleryItems.length} items preserved</span>
+>>>>>>> origin/main
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -428,7 +656,11 @@ export const MySpaceView: React.FC = () => {
                 <div
                   key={item.id}
                   onClick={() => setActiveEventId(item.eventId)}
+<<<<<<< HEAD
                   className="bg-white border border-[#eae5f1] rounded-xl overflow-hidden shadow-2xs hover:shadow-md transition-all cursor-pointer group"
+=======
+                  className="bg-white border border-[#EAE5F1] rounded-2xl overflow-hidden shadow-2xs hover:shadow-md transition-all cursor-pointer group"
+>>>>>>> origin/main
                 >
                   {item.type === 'image' ? (
                     <div className="h-36 w-full relative">
@@ -439,6 +671,7 @@ export const MySpaceView: React.FC = () => {
                       />
                     </div>
                   ) : item.type === 'document' ? (
+<<<<<<< HEAD
                     <div className="h-36 w-full bg-[#f8f5fc] flex flex-col items-center justify-center p-3 text-center">
                       <FileText className="w-8 h-8 text-[#8064b5] mb-2" />
                       <p className="text-xs font-semibold text-[#111b21] truncate max-w-full">
@@ -451,12 +684,31 @@ export const MySpaceView: React.FC = () => {
                       <Mic className="w-8 h-8 text-[#8064b5] mb-2" />
                       <p className="text-xs font-semibold text-[#111b21]">Voice Reflection</p>
                       <span className="text-[10px] text-[#667781] mt-0.5">{item.fileSize}</span>
+=======
+                    <div className="h-36 w-full bg-[#E9DDFB]/40 flex flex-col items-center justify-center p-3 text-center">
+                      <FileText className="w-8 h-8 text-[#8064B5] mb-2" />
+                      <p className="text-xs font-semibold text-[#292333] truncate max-w-full">
+                        {item.fileName}
+                      </p>
+                      <span className="text-[10px] text-[#777181] mt-0.5">{item.fileSize}</span>
+                    </div>
+                  ) : (
+                    <div className="h-36 w-full bg-[#E9DDFB]/30 flex flex-col items-center justify-center p-3 text-center">
+                      <Mic className="w-8 h-8 text-[#8064B5] mb-2" />
+                      <p className="text-xs font-semibold text-[#292333]">Voice Reflection</p>
+                      <span className="text-[10px] text-[#777181] mt-0.5">{item.fileSize}</span>
+>>>>>>> origin/main
                     </div>
                   )}
 
                   <div className="p-2.5">
+<<<<<<< HEAD
                     <p className="text-[11px] font-bold text-[#111b21] truncate">{item.eventName}</p>
                     <span className="text-[10px] text-[#667781]">{item.memoryDate}</span>
+=======
+                    <p className="text-[11px] font-bold text-[#292333] truncate">{item.eventName}</p>
+                    <span className="text-[10px] text-[#777181]">{item.memoryDate}</span>
+>>>>>>> origin/main
                   </div>
                 </div>
               ))}

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+<<<<<<< HEAD
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --color-wa-teal: #8064b5;
   --color-wa-teal-light: #947bc3;
@@ -23,12 +24,28 @@
     radial-gradient(#d5cdc1 0.75px, #efeae2 0.75px);
   background-size: 24px 24px;
   background-position: 0 0, 12px 12px;
+=======
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --color-lavender-primary: #E9DDFB;
+  --color-lavender-accent: #B99AEF;
+  --color-lavender-deep: #8064B5;
+  --color-lavender-soft: #F8F5FC;
+  --color-whatchat-text: #292333;
+  --color-whatchat-muted: #777181;
+  --color-whatchat-border: #EAE5F1;
+  --color-whatchat-success: #5EAA85;
+>>>>>>> origin/main
 }
 
 /* Custom smooth scrollbars */
 ::-webkit-scrollbar {
+<<<<<<< HEAD
   width: 6px;
   height: 6px;
+=======
+  width: 5px;
+  height: 5px;
+>>>>>>> origin/main
 }
 
 ::-webkit-scrollbar-track {
@@ -36,12 +53,20 @@
 }
 
 ::-webkit-scrollbar-thumb {
+<<<<<<< HEAD
   background: #ced0d1;
+=======
+  background: #EAE5F1;
+>>>>>>> origin/main
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
+<<<<<<< HEAD
   background: #aebac1;
+=======
+  background: #D8CCE8;
+>>>>>>> origin/main
 }
 
 /* Audio waveform animation */
@@ -53,6 +78,7 @@
 .animate-waveform {
   animation: wave-bar 1.2s ease-in-out infinite;
 }
+<<<<<<< HEAD
 
 body {
   margin: 0;
@@ -615,3 +641,5 @@ body {
   border-color: #947bc3;
   outline: 3px solid #e9ddfb;
 }
+=======
+>>>>>>> origin/main

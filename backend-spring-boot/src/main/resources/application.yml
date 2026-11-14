@@ -2,6 +2,7 @@ spring:
   application:
     name: whatchat-backend
   datasource:
+<<<<<<< HEAD
     url: ${DATASOURCE_URL:jdbc:h2:mem:whatchat_db;DB_CLOSE_DELAY=-1;MODE=MySQL;DATABASE_TO_LOWER=TRUE}
     username: ${DATASOURCE_USERNAME:sa}
     password: ${DATASOURCE_PASSWORD:}
@@ -15,10 +16,17 @@ spring:
       uri: ${MONGODB_URI:mongodb://localhost:27017/whatchat_db}
       database: ${MONGODB_DATABASE:whatchat_db}
       auto-index-creation: false
+=======
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:whatchat_db}?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${MYSQL_USER:root}
+    password: ${MYSQL_PASSWORD:rootpassword}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+>>>>>>> origin/main
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: false
+<<<<<<< HEAD
   sql:
     init:
       mode: never
@@ -33,10 +41,17 @@ spring:
           auth: ${SMTP_AUTH:false}
           starttls:
             enable: ${SMTP_STARTTLS:false}
+=======
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+>>>>>>> origin/main
 
 # Security & JWT Configuration
 security:
   jwt:
+<<<<<<< HEAD
     secret-key: ${JWT_SECRET:whatchat-super-secure-jwt-signing-secret-key-2026-minimum-32-bytes}
   cookie:
     secure: ${COOKIE_SECURE:false}
@@ -47,18 +62,31 @@ app:
     origin: ${APP_ORIGIN:http://localhost:3000}
   mail:
     from: ${MAIL_FROM:noreply@whatchat.app}
+=======
+    secret-key: ${JWT_SECRET:whatchat_super_secure_jwt_secret_key_light_lavender_2026}
+    expiration-time: 86400000 # 24 Hours
+    refresh-expiration-time: 604800000 # 7 Days
+>>>>>>> origin/main
 
 # S3 Object Storage Configuration for Media (Photos, Videos, PDFs, Voice Notes)
 aws:
   s3:
+<<<<<<< HEAD
     bucket: ${AWS_S3_BUCKET:}
     region: ${AWS_REGION:us-east-1}
     access-key: ${AWS_ACCESS_KEY_ID:}
     secret-key: ${AWS_SECRET_ACCESS_KEY:}
+=======
+    bucket: ${AWS_S3_BUCKET:whatchat-media-storage}
+    region: ${AWS_REGION:us-east-1}
+    access-key: ${AWS_ACCESS_KEY_ID:mock_s3_key}
+    secret-key: ${AWS_SECRET_ACCESS_KEY:mock_s3_secret}
+>>>>>>> origin/main
     presigned-url-expiration-minutes: 60
 
 server:
   port: ${PORT:8080}
+<<<<<<< HEAD
 
 ---
 spring:
@@ -74,3 +102,5 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+=======
+>>>>>>> origin/main

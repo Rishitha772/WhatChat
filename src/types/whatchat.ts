@@ -7,9 +7,36 @@ export interface UserPrivacySettings {
   phoneDiscovery: boolean;
 }
 
+<<<<<<< HEAD
 export interface User {
   id: string;
   email?: string;
+=======
+export interface NotificationPreferences {
+  enabled: boolean;
+  showPreviews: boolean;
+  sound: boolean;
+  groupMode: 'all' | 'mentions_only' | 'none';
+  mentionAlerts: boolean;
+  memoryMilestones: boolean;
+}
+
+export type NotificationType = 'message' | 'mention' | 'memory' | 'system';
+
+export interface InAppNotification {
+  id: string;
+  title: string;
+  body: string;
+  avatarUrl?: string;
+  type: NotificationType;
+  conversationId?: string;
+  eventId?: string;
+  timestamp: string;
+}
+
+export interface User {
+  id: string;
+>>>>>>> origin/main
   phoneNumber: string;
   countryCode: string;
   displayName: string;
@@ -20,6 +47,10 @@ export interface User {
   lastSeen?: string;
   isOnline: boolean;
   privacySettings: UserPrivacySettings;
+<<<<<<< HEAD
+=======
+  notificationSettings: NotificationPreferences;
+>>>>>>> origin/main
   storageUsedBytes: number; // e.g. 1.4 GB
   storageTotalBytes: number; // e.g. 15 GB
 }

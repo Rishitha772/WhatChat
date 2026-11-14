@@ -27,7 +27,16 @@ public class PushNotificationService {
             NotificationType type,
             Map<String, String> dataPayload) {
 
+<<<<<<< HEAD
         return false;
+=======
+        // In production:
+        // 1. Fetch user notification preferences and verify if type is enabled
+        // 2. Fetch active device tokens from device_push_tokens table
+        // 3. Dispatch payload using WebPush (VAPID) / FCM HTTP v1 API
+        // 4. Return delivery status
+        return true;
+>>>>>>> origin/main
     }
 
     /**
